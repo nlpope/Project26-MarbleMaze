@@ -6,14 +6,13 @@
 //
 
 import SpriteKit
-//import GameplayKit
+import GameplayKit
 
 extension GameScene {
     
     func loadBlock(atPosition position: CGPoint)
     {
         let node                            = SKSpriteNode(imageNamed: ImageNames.block)
-        
         node.position                       = position
         node.physicsBody                    = SKPhysicsBody(rectangleOf: node.size)
         node.physicsBody?.categoryBitMask   = CollisionTypes.wall.rawValue

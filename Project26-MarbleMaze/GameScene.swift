@@ -6,11 +6,10 @@
 //
 
 import SpriteKit
-//import GameplayKit
+import GameplayKit
 
 class GameScene: SKScene
 {
-    
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     
@@ -32,6 +31,11 @@ class GameScene: SKScene
         let lines               = levelString.components(separatedBy: "\n")
         for (row, line) in lines.reversed().enumerated()
         {
+            print(row)
+            guard row != 12 else {
+                print("gotta blast")
+                return
+            }
             for (column, letter) in line.enumerated()
             {
                 let position    = CGPoint(x: (64 * column) + 32, y: (64 * row) + 32)
