@@ -6,7 +6,7 @@
 //
 
 import SpriteKit
-import GameplayKit
+//import GameplayKit
 
 class GameScene: SKScene
 {
@@ -16,7 +16,8 @@ class GameScene: SKScene
     
     override func didMove(to view: SKView)
     {
-        
+        generateBackground()
+        loadLevel()
     }
     
     
@@ -34,36 +35,21 @@ class GameScene: SKScene
             for (column, letter) in line.enumerated()
             {
                 let position    = CGPoint(x: (64 * column) + 32, y: (64 * row) + 32)
-                #warning("change to switch cases?")
-                if letter == "x"
+                switch letter
                 {
-                    let node                            = SKSpriteNode(imageNamed: ImageNames.block)
-                    
-                    node.position                       = position
-                    node.physicsBody                    = SKPhysicsBody(rectangleOf: node.size)
-                    node.physicsBody?.categoryBitMask   = CollisionTypes.wall.rawValue
-                    node.physicsBody?.isDynamic         = false
-                    
-                    addChild(node)
+                case "x":
+                    loadBlock(atPosition: position)
+                case "v":
+                    loadVortex(atPosition: position)
+                case "s":
+                    loadStar(atPosition: position)
+                case "f":
+                    loadFinish(atPosition: position)
+                case " ":
+                    break
+                default:
+                    fatalError("Unknown level letter: \(letter)")
                 }
-                else if letter == "v"
-                {
-                    let node                                = SKSpriteNode(imageNamed: ImageNames.vortex)
-                    node.name                               = NodeNames.vortex
-                    node.position                           = position
-                    node.run(SKAction.repeatForever(SKAction.rotate(byAngle: .pi, duration: 1)))
-                    node.physicsBody                        = SKPhysicsBody(circleOfRadius: node.size.width / 2)
-                    node.physicsBody?.isDynamic             = false
-                    
-                    node.physicsBody?.categoryBitMask       = CollisionTypes.vortex.rawValue
-                    node.physicsBody?.contactTestBitMask    = CollisionTypes.player.rawValue
-                    node.physicsBody?.collisionBitMask      = 0
-                    addChild(node)
-                }
-                else if letter == "s" { /* load star */}
-                else if letter == "f" { /* load finish */}
-                else if letter == " " { /* empty space - do nothing */}
-                else { fatalError("Unknown level letter: \(letter)") }
             }
         }
     }

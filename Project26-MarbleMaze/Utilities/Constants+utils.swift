@@ -18,11 +18,17 @@ enum CollisionTypes: UInt32
 
 enum ImageNames
 {
-    static let block    = "block"
-    static let vortex   = "vortex"
+    static let block        = "block"
+    static let vortex       = "vortex"
+    static let star         = "star"
+    static let finish       = "finish"
+    static let background   = "background"
 }
 
 enum NodeNames
 {
-    static let vortex   = "vortex"
+    static let vortex       = "vortex"
+    static let star         = "star"
+    static let finish       = "finish"
+    static let background   = "background"
 }
