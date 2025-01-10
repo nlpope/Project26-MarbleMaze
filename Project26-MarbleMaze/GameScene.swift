@@ -20,6 +20,7 @@ class GameScene: SKScene
     }
     
     
+    // is this func causing red 'x's to appear?
     func loadLevel()
     {
         guard let levelURL      = Bundle.main.url(forResource: "level1", withExtension: "txt")
@@ -32,7 +33,7 @@ class GameScene: SKScene
         for (row, line) in lines.reversed().enumerated()
         {
             print(row)
-            guard row != 12 else {
+            guard row != 11 else {
                 print("gotta blast")
                 return
             }
