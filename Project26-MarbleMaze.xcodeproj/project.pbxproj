@@ -6,6 +6,32 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		40C5BA642D6A123800E7AA91 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA592D6A123800E7AA91 /* Actions.sks */; };
+		40C5BA652D6A123800E7AA91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA5B2D6A123800E7AA91 /* Assets.xcassets */; };
+		40C5BA662D6A123800E7AA91 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA5C2D6A123800E7AA91 /* GameScene.sks */; };
+		40C5BA672D6A123800E7AA91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA602D6A123800E7AA91 /* LaunchScreen.storyboard */; };
+		40C5BA682D6A123800E7AA91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA622D6A123800E7AA91 /* Main.storyboard */; };
+		40C5BA692D6A123800E7AA91 /* GameScene+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C5BA552D6A123800E7AA91 /* GameScene+Ext.swift */; };
+		40C5BA6A2D6A123800E7AA91 /* Constants+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C5BA572D6A123800E7AA91 /* Constants+utils.swift */; };
+		40C5BA6B2D6A123800E7AA91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C5BA5A2D6A123800E7AA91 /* AppDelegate.swift */; };
+		40C5BA6C2D6A123800E7AA91 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C5BA5D2D6A123800E7AA91 /* GameScene.swift */; };
+		40C5BA6D2D6A123800E7AA91 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C5BA5E2D6A123800E7AA91 /* GameViewController.swift */; };
+		40C5BA7C2D6A124B00E7AA91 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA6E2D6A124B00E7AA91 /* background.jpg */; };
+		40C5BA7D2D6A124B00E7AA91 /* background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA6F2D6A124B00E7AA91 /* background@2x.jpg */; };
+		40C5BA7E2D6A124B00E7AA91 /* block.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA702D6A124B00E7AA91 /* block.png */; };
+		40C5BA7F2D6A124B00E7AA91 /* block@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA712D6A124B00E7AA91 /* block@2x.png */; };
+		40C5BA802D6A124B00E7AA91 /* finish.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA722D6A124B00E7AA91 /* finish.png */; };
+		40C5BA812D6A124B00E7AA91 /* finish@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA732D6A124B00E7AA91 /* finish@2x.png */; };
+		40C5BA822D6A124B00E7AA91 /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA742D6A124B00E7AA91 /* level1.txt */; };
+		40C5BA832D6A124B00E7AA91 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA752D6A124B00E7AA91 /* player.png */; };
+		40C5BA842D6A124B00E7AA91 /* player@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA762D6A124B00E7AA91 /* player@2x.png */; };
+		40C5BA852D6A124B00E7AA91 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA772D6A124B00E7AA91 /* star.png */; };
+		40C5BA862D6A124B00E7AA91 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA782D6A124B00E7AA91 /* star@2x.png */; };
+		40C5BA872D6A124B00E7AA91 /* vortex.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA792D6A124B00E7AA91 /* vortex.png */; };
+		40C5BA882D6A124B00E7AA91 /* vortex@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA7A2D6A124B00E7AA91 /* vortex@2x.png */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		40BBBCA52D0DF314009A1843 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,14 +53,32 @@
 		40BBBC8B2D0DF30C009A1843 /* Project26-MarbleMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project26-MarbleMaze.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40BBBCA42D0DF314009A1843 /* Project26-MarbleMazeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project26-MarbleMazeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40BBBCAE2D0DF314009A1843 /* Project26-MarbleMazeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project26-MarbleMazeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		40C5BA552D6A123800E7AA91 /* GameScene+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Ext.swift"; sourceTree = "<group>"; };
+		40C5BA572D6A123800E7AA91 /* Constants+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+utils.swift"; sourceTree = "<group>"; };
+		40C5BA592D6A123800E7AA91 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		40C5BA5A2D6A123800E7AA91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		40C5BA5B2D6A123800E7AA91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		40C5BA5C2D6A123800E7AA91 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		40C5BA5D2D6A123800E7AA91 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		40C5BA5E2D6A123800E7AA91 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		40C5BA5F2D6A123800E7AA91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		40C5BA612D6A123800E7AA91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		40C5BA6E2D6A124B00E7AA91 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		40C5BA6F2D6A124B00E7AA91 /* background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background@2x.jpg"; sourceTree = "<group>"; };
+		40C5BA702D6A124B00E7AA91 /* block.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = block.png; sourceTree = "<group>"; };
+		40C5BA712D6A124B00E7AA91 /* block@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "block@2x.png"; sourceTree = "<group>"; };
+		40C5BA722D6A124B00E7AA91 /* finish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finish.png; sourceTree = "<group>"; };
+		40C5BA732D6A124B00E7AA91 /* finish@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "finish@2x.png"; sourceTree = "<group>"; };
+		40C5BA742D6A124B00E7AA91 /* level1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = level1.txt; sourceTree = "<group>"; };
+		40C5BA752D6A124B00E7AA91 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
+		40C5BA762D6A124B00E7AA91 /* player@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player@2x.png"; sourceTree = "<group>"; };
+		40C5BA772D6A124B00E7AA91 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		40C5BA782D6A124B00E7AA91 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
+		40C5BA792D6A124B00E7AA91 /* vortex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vortex.png; sourceTree = "<group>"; };
+		40C5BA7A2D6A124B00E7AA91 /* vortex@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vortex@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		40BBBC8D2D0DF30C009A1843 /* Project26-MarbleMaze */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Project26-MarbleMaze";
-			sourceTree = "<group>";
-		};
 		40BBBCA72D0DF314009A1843 /* Project26-MarbleMazeTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "Project26-MarbleMazeTests";
@@ -75,7 +119,8 @@
 		40BBBC822D0DF30C009A1843 = {
 			isa = PBXGroup;
 			children = (
-				40BBBC8D2D0DF30C009A1843 /* Project26-MarbleMaze */,
+				40C5BA632D6A123800E7AA91 /* Project26-MarbleMaze */,
+				40C5BA7B2D6A124B00E7AA91 /* Content */,
 				40BBBCA72D0DF314009A1843 /* Project26-MarbleMazeTests */,
 				40BBBCB12D0DF314009A1843 /* Project26-MarbleMazeUITests */,
 				40BBBC8C2D0DF30C009A1843 /* Products */,
@@ -92,6 +137,59 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		40C5BA562D6A123800E7AA91 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				40C5BA552D6A123800E7AA91 /* GameScene+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		40C5BA582D6A123800E7AA91 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				40C5BA572D6A123800E7AA91 /* Constants+utils.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		40C5BA632D6A123800E7AA91 /* Project26-MarbleMaze */ = {
+			isa = PBXGroup;
+			children = (
+				40C5BA562D6A123800E7AA91 /* Extensions */,
+				40C5BA582D6A123800E7AA91 /* Utilities */,
+				40C5BA592D6A123800E7AA91 /* Actions.sks */,
+				40C5BA5A2D6A123800E7AA91 /* AppDelegate.swift */,
+				40C5BA5B2D6A123800E7AA91 /* Assets.xcassets */,
+				40C5BA5C2D6A123800E7AA91 /* GameScene.sks */,
+				40C5BA5D2D6A123800E7AA91 /* GameScene.swift */,
+				40C5BA5E2D6A123800E7AA91 /* GameViewController.swift */,
+				40C5BA602D6A123800E7AA91 /* LaunchScreen.storyboard */,
+				40C5BA622D6A123800E7AA91 /* Main.storyboard */,
+			);
+			path = "Project26-MarbleMaze";
+			sourceTree = "<group>";
+		};
+		40C5BA7B2D6A124B00E7AA91 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				40C5BA6E2D6A124B00E7AA91 /* background.jpg */,
+				40C5BA6F2D6A124B00E7AA91 /* background@2x.jpg */,
+				40C5BA702D6A124B00E7AA91 /* block.png */,
+				40C5BA712D6A124B00E7AA91 /* block@2x.png */,
+				40C5BA722D6A124B00E7AA91 /* finish.png */,
+				40C5BA732D6A124B00E7AA91 /* finish@2x.png */,
+				40C5BA752D6A124B00E7AA91 /* player.png */,
+				40C5BA762D6A124B00E7AA91 /* player@2x.png */,
+				40C5BA772D6A124B00E7AA91 /* star.png */,
+				40C5BA782D6A124B00E7AA91 /* star@2x.png */,
+				40C5BA792D6A124B00E7AA91 /* vortex.png */,
+				40C5BA7A2D6A124B00E7AA91 /* vortex@2x.png */,
+				40C5BA742D6A124B00E7AA91 /* level1.txt */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +204,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				40BBBC8D2D0DF30C009A1843 /* Project26-MarbleMaze */,
 			);
 			name = "Project26-MarbleMaze";
 			packageProductDependencies = (
@@ -212,6 +307,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40C5BA642D6A123800E7AA91 /* Actions.sks in Resources */,
+				40C5BA652D6A123800E7AA91 /* Assets.xcassets in Resources */,
+				40C5BA662D6A123800E7AA91 /* GameScene.sks in Resources */,
+				40C5BA672D6A123800E7AA91 /* LaunchScreen.storyboard in Resources */,
+				40C5BA682D6A123800E7AA91 /* Main.storyboard in Resources */,
+				40C5BA7C2D6A124B00E7AA91 /* background.jpg in Resources */,
+				40C5BA7D2D6A124B00E7AA91 /* background@2x.jpg in Resources */,
+				40C5BA7E2D6A124B00E7AA91 /* block.png in Resources */,
+				40C5BA7F2D6A124B00E7AA91 /* block@2x.png in Resources */,
+				40C5BA802D6A124B00E7AA91 /* finish.png in Resources */,
+				40C5BA812D6A124B00E7AA91 /* finish@2x.png in Resources */,
+				40C5BA822D6A124B00E7AA91 /* level1.txt in Resources */,
+				40C5BA832D6A124B00E7AA91 /* player.png in Resources */,
+				40C5BA842D6A124B00E7AA91 /* player@2x.png in Resources */,
+				40C5BA852D6A124B00E7AA91 /* star.png in Resources */,
+				40C5BA862D6A124B00E7AA91 /* star@2x.png in Resources */,
+				40C5BA872D6A124B00E7AA91 /* vortex.png in Resources */,
+				40C5BA882D6A124B00E7AA91 /* vortex@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +349,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40C5BA692D6A123800E7AA91 /* GameScene+Ext.swift in Sources */,
+				40C5BA6A2D6A123800E7AA91 /* Constants+utils.swift in Sources */,
+				40C5BA6B2D6A123800E7AA91 /* AppDelegate.swift in Sources */,
+				40C5BA6C2D6A123800E7AA91 /* GameScene.swift in Sources */,
+				40C5BA6D2D6A123800E7AA91 /* GameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +385,25 @@
 			targetProxy = 40BBBCAF2D0DF314009A1843 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		40C5BA602D6A123800E7AA91 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40C5BA5F2D6A123800E7AA91 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		40C5BA622D6A123800E7AA91 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40C5BA612D6A123800E7AA91 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		40BBBCB62D0DF314009A1843 /* Debug */ = {

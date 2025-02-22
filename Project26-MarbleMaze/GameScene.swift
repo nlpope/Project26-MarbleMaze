@@ -25,18 +25,12 @@ class GameScene: SKScene
     {
         guard let levelURL      = Bundle.main.url(forResource: "level1", withExtension: "txt")
         else { fatalError("Could not find level1.txt in the app bundle.") }
-        
         guard let levelString   = try? String(contentsOf: levelURL)
         else { fatalError("Could not load level1.txt from app budnle.") }
         
-        let lines               = levelString.components(separatedBy: "\n")
+        let lines               = levelString.trimmingCharacters(in: .newlines).components(separatedBy: "\n")
         for (row, line) in lines.reversed().enumerated()
         {
-            print(row)
-            guard row != 11 else {
-                print("gotta blast")
-                return
-            }
             for (column, letter) in line.enumerated()
             {
                 let position    = CGPoint(x: (64 * column) + 32, y: (64 * row) + 32)
