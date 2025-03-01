@@ -34,3 +34,8 @@ enum NodeNames
     static let finish       = "finish"
     static let background   = "background"
 }
+
+enum FontNames
+{
+    static let chalkDuster  = "Chalkduster"
+}

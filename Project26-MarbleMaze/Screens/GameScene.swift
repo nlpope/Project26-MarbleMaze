@@ -9,26 +9,30 @@ import CoreMotion
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene
+class GameScene: SKScene, SKPhysicsContactDelegate
 {
     var player: SKSpriteNode!
     var lastTouchPosition: CGPoint?
     var motionManager: CMMotionManager!
     
+    var scoreLabel: SKLabelNode!
+    var score       = 0 { didSet { scoreLabel.text = "Score: \(score)" } }
+    var isGameOver  = false
+    
     override func didMove(to view: SKView)
     {
         generateBackground()
         loadLevel()
+        generateLabels()
         createPlayer()
         setUpMotionManager()
+        setUpPhysicsWorld()
     }
     
     
     // is this func causing red 'x's to appear?
     func loadLevel()
     {
-        physicsWorld.gravity    = .zero
-        
         guard let levelURL      = Bundle.main.url(forResource: "level1", withExtension: "txt")
         else { fatalError("Could not find level1.txt in the app bundle.") }
         guard let levelString   = try? String(contentsOf: levelURL, encoding: .macOSRoman)
@@ -60,31 +64,70 @@ class GameScene: SKScene
     }
     
     
-    func createPlayer()
-    {
-        player                                  = SKSpriteNode(imageNamed: ImageNames.player)
-        player.position                         = CGPoint(x: 96, y: 672)
-        player.zPosition                        = 1
-        player.physicsBody                      = SKPhysicsBody(circleOfRadius: player.size.width / 2)
-        player.physicsBody?.allowsRotation      = false
-        player.physicsBody?.linearDamping       = 0.5
-        
-        player.physicsBody?.categoryBitMask     = CollisionTypes.player.rawValue
-        player.physicsBody?.contactTestBitMask  = CollisionTypes.star.rawValue | CollisionTypes.vortex.rawValue | CollisionTypes.finish.rawValue
-        player.physicsBody?.collisionBitMask    = CollisionTypes.wall.rawValue
-        
-        addChild(player)
-    }
-    
-    
     func setUpMotionManager()
     {
         motionManager   = CMMotionManager()
         motionManager.startAccelerometerUpdates()
     }
     
+    
+    func setUpPhysicsWorld()
+    {
+        physicsWorld.gravity            = .zero
+        physicsWorld.contactDelegate    = self
+    }
+    
+    
+    func playerCollided(with node: SKNode)
+    {
+        if node.name == NodeNames.vortex
+        {
+            player.physicsBody?.isDynamic   = false
+            isGameOver                      = true
+            score -= 1
+            
+            let move        = SKAction.move(to: node.position, duration: 0.25)
+            let scale       = SKAction.scale(to: 0.0001, duration: 0.25)
+            let remove      = SKAction.removeFromParent()
+            let sequence    = SKAction.sequence([move, scale, remove])
+            
+            player.run(sequence) { [weak self] in
+                guard let self  = self else { return }
+                
+                self.createPlayer()
+                self.isGameOver = false
+            }
+        }
+        
+        else if node.name == NodeNames.star
+        {
+            score += 1
+            
+            let scale       = SKAction.scale(to: 3.0, duration: 0.25)
+            let fade        = SKAction.fadeOut(withDuration: 0.35)
+            let remove      = SKAction.removeFromParent()
+            let sequence    = SKAction.sequence([scale, fade, remove])
+            
+            player.run(sequence)
+        }
+        
+        else if node.name == NodeNames.finish
+        {
+            isGameOver = true
+        }
+    }
+    
     //-------------------------------------//
     // MARK: TOUCH METHODS
+    func didBegin(_ contact: SKPhysicsContact) {
+        guard let nodeA = contact.bodyA.node else { return }
+        guard let nodeB = contact.bodyB.node else { return }
+        
+        if nodeA == player { playerCollided(with: nodeB) }
+        else if nodeB == player { playerCollided(with: nodeA) }
+    }
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
         guard let touch     = touches.first else { return }
@@ -101,12 +144,14 @@ class GameScene: SKScene
     }
     
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) { lastTouchPosition   = nil }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) { lastTouchPosition = nil }
     
     
     override func update(_ currentTime: TimeInterval)
     {
-        // COMPILER DIRECTIVES
+        guard !isGameOver else { return }
+        
+        /* COMPILER DIRECTIVES */
         #if targetEnvironment(simulator)
         if let currentTouch = lastTouchPosition
         {
