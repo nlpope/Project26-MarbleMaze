@@ -156,16 +156,11 @@
 		40C5BA632D6A123800E7AA91 /* Project26-MarbleMaze */ = {
 			isa = PBXGroup;
 			children = (
-				40C5BA562D6A123800E7AA91 /* Extensions */,
 				40C5BA582D6A123800E7AA91 /* Utilities */,
-				40C5BA592D6A123800E7AA91 /* Actions.sks */,
-				40C5BA5A2D6A123800E7AA91 /* AppDelegate.swift */,
-				40C5BA5B2D6A123800E7AA91 /* Assets.xcassets */,
-				40C5BA5C2D6A123800E7AA91 /* GameScene.sks */,
-				40C5BA5D2D6A123800E7AA91 /* GameScene.swift */,
-				40C5BA5E2D6A123800E7AA91 /* GameViewController.swift */,
-				40C5BA602D6A123800E7AA91 /* LaunchScreen.storyboard */,
-				40C5BA622D6A123800E7AA91 /* Main.storyboard */,
+				40C5BA562D6A123800E7AA91 /* Extensions */,
+				40FEBC102D735F6D00A91B9B /* Screens */,
+				40FEBC112D735F8B00A91B9B /* SKSFiles */,
+				40FEBC122D735FC400A91B9B /* Support */,
 			);
 			path = "Project26-MarbleMaze";
 			sourceTree = "<group>";
@@ -188,6 +183,35 @@
 				40C5BA742D6A124B00E7AA91 /* level1.txt */,
 			);
 			path = Content;
+			sourceTree = "<group>";
+		};
+		40FEBC102D735F6D00A91B9B /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				40C5BA5D2D6A123800E7AA91 /* GameScene.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		40FEBC112D735F8B00A91B9B /* SKSFiles */ = {
+			isa = PBXGroup;
+			children = (
+				40C5BA592D6A123800E7AA91 /* Actions.sks */,
+				40C5BA5C2D6A123800E7AA91 /* GameScene.sks */,
+			);
+			path = SKSFiles;
+			sourceTree = "<group>";
+		};
+		40FEBC122D735FC400A91B9B /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				40C5BA5A2D6A123800E7AA91 /* AppDelegate.swift */,
+				40C5BA5E2D6A123800E7AA91 /* GameViewController.swift */,
+				40C5BA5B2D6A123800E7AA91 /* Assets.xcassets */,
+				40C5BA602D6A123800E7AA91 /* LaunchScreen.storyboard */,
+				40C5BA622D6A123800E7AA91 /* Main.storyboard */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

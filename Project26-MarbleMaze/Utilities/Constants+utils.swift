@@ -19,10 +19,12 @@ enum CollisionTypes: UInt32
 enum ImageNames
 {
     static let block        = "block"
+    // is this why i was getting x's (".png")?
     static let vortex       = "vortex.png"
     static let star         = "star"
     static let finish       = "finish"
-    static let background   = "background.jpg"
+    static let background   = "background"
+    static let player       = "player"
 }
 
 enum NodeNames

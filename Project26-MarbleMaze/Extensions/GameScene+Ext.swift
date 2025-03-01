@@ -8,7 +8,17 @@
 import SpriteKit
 import GameplayKit
 
-extension GameScene {
+extension GameScene
+{
+    func generateBackground()
+    {
+        let background                          = SKSpriteNode(imageNamed: ImageNames.background)
+        background.position                     = CGPoint(x: 512, y: 384)
+        background.blendMode                    = .replace
+        background.zPosition                    = -1
+        
+        addChild(background)
+    }
     
     func loadBlock(atPosition position: CGPoint)
     {
@@ -68,16 +78,5 @@ extension GameScene {
         node.physicsBody?.collisionBitMask      = 0
         
         addChild(node)
-    }
-    
-    
-    func generateBackground()
-    {
-        let background                          = SKSpriteNode(imageNamed: ImageNames.background)
-        background.position                     = CGPoint(x: 512, y: 384)
-        background.blendMode                    = .replace
-        background.zPosition                    = -1
-        
-        addChild(background)
     }
 }
