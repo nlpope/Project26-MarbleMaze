@@ -5,36 +5,30 @@
 //  Created by Noah Pope on 12/14/24.
 //
 
+import CoreMotion
 import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene
 {
     var player: SKSpriteNode!
+    var lastTouchPosition: CGPoint?
+    var motionManager: CMMotionManager!
     
     override func didMove(to view: SKView)
     {
         generateBackground()
         loadLevel()
-    }
-    
-    
-    func createPlayer()
-    {
-        // 1. load sprite
-        player = SKSpriteNode(imageNamed: ImageNames.player)
-        // 2. give it circle physics
-        // 3. add it to the scene
-        
-        // 4. set phys body's allowrotation to false
-        // 5. give ball linearDamping value of 0.5
-        // 6. combine star, vortex and finish line values to get ball's contactTestBitMask
+        createPlayer()
+        setUpMotionManager()
     }
     
     
     // is this func causing red 'x's to appear?
     func loadLevel()
     {
+        physicsWorld.gravity    = .zero
+        
         guard let levelURL      = Bundle.main.url(forResource: "level1", withExtension: "txt")
         else { fatalError("Could not find level1.txt in the app bundle.") }
         guard let levelString   = try? String(contentsOf: levelURL, encoding: .macOSRoman)
@@ -66,50 +60,66 @@ class GameScene: SKScene
     }
     
     
-    func touchDown(atPoint pos : CGPoint)
+    func createPlayer()
     {
-       
+        player                                  = SKSpriteNode(imageNamed: ImageNames.player)
+        player.position                         = CGPoint(x: 96, y: 672)
+        player.zPosition                        = 1
+        player.physicsBody                      = SKPhysicsBody(circleOfRadius: player.size.width / 2)
+        player.physicsBody?.allowsRotation      = false
+        player.physicsBody?.linearDamping       = 0.5
+        
+        player.physicsBody?.categoryBitMask     = CollisionTypes.player.rawValue
+        player.physicsBody?.contactTestBitMask  = CollisionTypes.star.rawValue | CollisionTypes.vortex.rawValue | CollisionTypes.finish.rawValue
+        player.physicsBody?.collisionBitMask    = CollisionTypes.wall.rawValue
+        
+        addChild(player)
     }
     
     
-    func touchMoved(toPoint pos : CGPoint)
+    func setUpMotionManager()
     {
-       
+        motionManager   = CMMotionManager()
+        motionManager.startAccelerometerUpdates()
     }
     
-    
-    func touchUp(atPoint pos : CGPoint)
-    {
-       
-    }
-    
-    
+    //-------------------------------------//
+    // MARK: TOUCH METHODS
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
-        
+        guard let touch     = touches.first else { return }
+        let location        = touch.location(in: self)
+        lastTouchPosition   = location
     }
     
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?)
     {
-        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
+        guard let touch     = touches.first else { return }
+        let location        = touch.location(in: self)
+        lastTouchPosition   = location
     }
     
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?)
-    {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?)
-    {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) { lastTouchPosition   = nil }
     
     
     override func update(_ currentTime: TimeInterval)
     {
-        // Called before each frame is rendered
+        // COMPILER DIRECTIVES
+        #if targetEnvironment(simulator)
+        if let currentTouch = lastTouchPosition
+        {
+            let diff                = CGPoint(x: currentTouch.x - player.position.x,
+                                              y: currentTouch.y - player.position.y)
+            physicsWorld.gravity    = CGVector(dx: diff.x / 100, dy: diff.y / 100)
+        }
+        #else
+        if let accelerometerData    = motionManager.accelerometerData
+        {
+            physicsWorld.gravity    = CGVector(dx: accelerometerData.acceleration.y * -50,
+                                               dy: accelerometerData.acceleration.x * 50)
+        }
+        #endif
     }
 }
