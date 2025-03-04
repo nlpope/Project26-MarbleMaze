@@ -81,6 +81,22 @@ extension GameScene
     }
     
     
+    func loadTeleporter(atPosition position: CGPoint)
+    {
+        let node                                = SKSpriteNode(imageNamed: ImageNames.finish)
+        node.name                               = NodeNames.finish
+        node.position                           = position
+        node.physicsBody                        = SKPhysicsBody(circleOfRadius: node.size.width / 2)
+        node.physicsBody?.isDynamic             = false
+        
+        node.physicsBody?.categoryBitMask       = CollisionTypes.finish.rawValue
+        node.physicsBody?.contactTestBitMask    = CollisionTypes.player.rawValue
+        node.physicsBody?.collisionBitMask      = 0
+        
+        addChild(node)
+    }
+    
+    
     func generateLabels()
     {
         scoreLabel                          = SKLabelNode(fontNamed: FontNames.chalkDuster)

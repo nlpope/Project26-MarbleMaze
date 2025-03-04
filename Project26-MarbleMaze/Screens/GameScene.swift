@@ -18,11 +18,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate
     var scoreLabel: SKLabelNode!
     var score       = 0 { didSet { scoreLabel.text = "Score: \(score)" } }
     var isGameOver  = false
+    var level       = 1 { didSet { loadLevel(level) } }
     
     override func didMove(to view: SKView)
     {
         generateBackground()
-        loadLevel()
+        loadLevel(1)
         generateLabels()
         createPlayer()
         setUpMotionManager()
@@ -31,12 +32,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate
     
     
     // is this func causing red 'x's to appear?
-    func loadLevel()
+    func loadLevel(_ levelNumber: Int)
     {
-        guard let levelURL      = Bundle.main.url(forResource: "level1", withExtension: "txt")
-        else { fatalError("Could not find level1.txt in the app bundle.") }
+        guard let levelURL      = Bundle.main.url(forResource: "level\(levelNumber)", withExtension: "txt")
+        else { fatalError("Could not find level\(levelNumber).txt in the app bundle.") }
         guard let levelString   = try? String(contentsOf: levelURL, encoding: .macOSRoman)
-        else { fatalError("Could not load level1.txt from app budnle.") }
+        else { fatalError("Could not load level\(levelNumber).txt from app budnle.") }
         
         let lines               = levelString.trimmingCharacters(in: .newlines).components(separatedBy: "\n")
         for (row, line) in lines.reversed().enumerated()
@@ -54,6 +55,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate
                     loadStar(atPosition: position)
                 case "f":
                     loadFinish(atPosition: position)
+                case "t":
+                    loadTeleporter(atPosition: position)
                 case " ":
                     break
                 default:
@@ -114,6 +117,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         else if node.name == NodeNames.finish
         {
             isGameOver = true
+            level += 1
+            loadLevel(level)
         }
     }
     

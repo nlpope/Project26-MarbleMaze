@@ -30,6 +30,8 @@
 		40C5BA862D6A124B00E7AA91 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA782D6A124B00E7AA91 /* star@2x.png */; };
 		40C5BA872D6A124B00E7AA91 /* vortex.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA792D6A124B00E7AA91 /* vortex.png */; };
 		40C5BA882D6A124B00E7AA91 /* vortex@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5BA7A2D6A124B00E7AA91 /* vortex@2x.png */; };
+		40FEBC1B2D7740F800A91B9B /* level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 40FEBC1A2D7740F800A91B9B /* level2.txt */; };
+		40FEBC1D2D77467A00A91B9B /* teleporter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40FEBC1C2D77467A00A91B9B /* teleporter@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		40C5BA782D6A124B00E7AA91 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
 		40C5BA792D6A124B00E7AA91 /* vortex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vortex.png; sourceTree = "<group>"; };
 		40C5BA7A2D6A124B00E7AA91 /* vortex@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vortex@2x.png"; sourceTree = "<group>"; };
+		40FEBC1A2D7740F800A91B9B /* level2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = level2.txt; sourceTree = "<group>"; };
+		40FEBC1C2D77467A00A91B9B /* teleporter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "teleporter@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -178,9 +182,11 @@
 				40C5BA762D6A124B00E7AA91 /* player@2x.png */,
 				40C5BA772D6A124B00E7AA91 /* star.png */,
 				40C5BA782D6A124B00E7AA91 /* star@2x.png */,
+				40FEBC1C2D77467A00A91B9B /* teleporter@2x.png */,
 				40C5BA792D6A124B00E7AA91 /* vortex.png */,
 				40C5BA7A2D6A124B00E7AA91 /* vortex@2x.png */,
 				40C5BA742D6A124B00E7AA91 /* level1.txt */,
+				40FEBC1A2D7740F800A91B9B /* level2.txt */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -331,6 +337,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40FEBC1D2D77467A00A91B9B /* teleporter@2x.png in Resources */,
+				40FEBC1B2D7740F800A91B9B /* level2.txt in Resources */,
 				40C5BA642D6A123800E7AA91 /* Actions.sks in Resources */,
 				40C5BA652D6A123800E7AA91 /* Assets.xcassets in Resources */,
 				40C5BA662D6A123800E7AA91 /* GameScene.sks in Resources */,
